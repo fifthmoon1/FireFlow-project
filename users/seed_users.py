@@ -1,5 +1,5 @@
 from app import create_app, db
-from users.models import User  # Assure-toi que le package users a bien un fichier models.py
+from users.models import User 
 from dotenv import load_dotenv
 
 load_dotenv()  # Charge les variables d'environnement si nécessaire
@@ -10,7 +10,6 @@ DEFAULT_USERNAME = "123"
 DEFAULT_PASSWORD = "123"
 
 with app.app_context():
-    # Vérifie si l'utilisateur existe déjà
     if User.query.filter_by(username=DEFAULT_USERNAME).first():
         print(f"L'utilisateur {DEFAULT_USERNAME} existe déjà, seed ignoré.")
     else:

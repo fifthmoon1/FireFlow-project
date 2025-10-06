@@ -1,4 +1,3 @@
-# fireflow/seed_firewalls.py
 from app import create_app, db
 from faker import Faker
 import random
@@ -16,7 +15,7 @@ with app.app_context():
         db.session.add(fw)
         db.session.flush()
 
-        # 1-3 policies per firewall
+        # 1-3 policies par firewall
         for p in range(random.randint(1, 3)):
             policy = FilteringPolicy(
                 firewall_id=fw.id,
@@ -26,7 +25,7 @@ with app.app_context():
             db.session.add(policy)
             db.session.flush()
 
-            # 1-5 rules per policy
+            # 1-5 rules par policy
             for r in range(random.randint(1, 5)):
                 rule = FirewallRule(
                     policy_id=policy.id,

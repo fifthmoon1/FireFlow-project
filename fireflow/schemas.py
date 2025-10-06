@@ -1,4 +1,3 @@
-# fireflow/schemas.py
 from marshmallow import Schema, fields, validate
 
 # --- FIREWALL ---

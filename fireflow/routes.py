@@ -1,4 +1,4 @@
-# fireflow/routes.py
+
 from flask_restx import Namespace, Resource, fields
 from flask import request
 from flask_jwt_extended import jwt_required
@@ -12,7 +12,7 @@ from .schemas import (
 
 ns = Namespace("fireflow", description="Gestion des firewalls, policies et règles")
 
-# --- RESTX models for Swagger ---
+# --- RESTX models pour Swagger ---
 firewall_model = ns.model("Firewall", {
     "id": fields.Integer(readonly=True),
     "name": fields.String(required=True),

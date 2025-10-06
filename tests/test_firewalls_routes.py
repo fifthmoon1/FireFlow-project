@@ -1,9 +1,5 @@
-# tests/test_fireflow_routes.py
-import pytest
-from app import create_app, db
+from app import  db
 from fireflow.models import Firewall, FilteringPolicy, FirewallRule
-from flask_jwt_extended import create_access_token
-
 
 # --- FIREWALLS ---
 def test_post_firewall(client, auth_header):
@@ -104,4 +100,3 @@ def test_delete_rule(client, auth_header):
     assert resp.status_code == 204
     assert db.session.get(FirewallRule, rule.id) is None
 
-# --- edge cases could be added similarly ---
