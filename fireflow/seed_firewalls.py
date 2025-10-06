@@ -1,4 +1,3 @@
-# fireflow/seed_firewalls.py
 from app import create_app, db
 from faker import Faker
 import random

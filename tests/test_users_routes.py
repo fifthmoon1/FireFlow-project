@@ -1,10 +1,4 @@
-
 from app import db
-from users.models import User
-
-
-import pytest
-from app import create_app, db
 from users.models import User
 from flask_jwt_extended import decode_token
 
